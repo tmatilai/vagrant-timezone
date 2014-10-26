@@ -1,16 +1,14 @@
-require_relative 'unix'
-
 module VagrantPlugins
   module TimeZone
     module Cap
-      # RedHat capabilities for changing time zone
-      class RedHat < Unix
+      # Generic *nix capabilities for changing time zone
+      class Unix
         # Set the time zone
         def self.change_timezone(machine, timezone)
-          super
-
           machine.communicate.sudo(
-            "echo 'ZONE=\"#{timezone}\"' > /etc/sysconfig/clock")
+            "ln -sf /usr/share/zoneinfo/#{timezone} /etc/localtime",
+            shell: 'sh'
+          )
         end
       end
     end
