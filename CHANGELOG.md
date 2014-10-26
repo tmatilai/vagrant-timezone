@@ -1,5 +1,8 @@
 # 0.2.0 / _Not released yet_
 
+Features:
+
+- Support FreeBSD, NetBSD, and OpenBSD
 
 # 0.1.0 / 2014-10-26
 

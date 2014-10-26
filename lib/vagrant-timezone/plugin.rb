@@ -64,6 +64,21 @@ module VagrantPlugins
         Cap::Debian
       end
 
+      guest_capability 'freebsd', 'change_timezone' do
+        require_relative 'cap/unix'
+        Cap::Unix
+      end
+
+      guest_capability 'netbsd', 'change_timezone' do
+        require_relative 'cap/unix'
+        Cap::Unix
+      end
+
+      guest_capability 'openbsd', 'change_timezone' do
+        require_relative 'cap/unix'
+        Cap::Unix
+      end
+
       guest_capability 'redhat', 'change_timezone' do
         require_relative 'cap/redhat'
         Cap::RedHat
