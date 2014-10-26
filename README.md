@@ -8,7 +8,7 @@
 
 A [Vagrant](http://www.vagrantup.com/) plugin that configures the time zone of a virtual machines.
 
-If you want to use a specific time zone in a Vagrant VM, or if a third party base box comes with a non-standard time zone, this plugin is to the rescue. The configuration is done on `vagrant up` and `vagrant reload` actions.
+If you want to use a specific time zone in a Vagrant VM, or if a third party base box comes with a non-standard time zone, this plugin is to the rescue. The configuration is done on `vagrant up` and `vagrant reload` actions. Note that no services are restarted automatically so they may keep using the old time zone information.
 
 ## Usage
 
