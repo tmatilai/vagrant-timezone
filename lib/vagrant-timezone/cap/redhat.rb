@@ -2,7 +2,7 @@ module VagrantPlugins
   module TimeZone
     module Cap
       # RedHat capabilities for changing time zone
-      module RedHat
+      class RedHat
         # Set the time zone
         def self.change_timezone(machine, timezone)
           machine.communicate.tap do |comm|

@@ -2,7 +2,7 @@ module VagrantPlugins
   module TimeZone
     module Cap
       # Debian capabilities for changing time zone
-      module Debian
+      class Debian
         # Set the time zone
         def self.change_timezone(machine, timezone)
           machine.communicate.tap do |comm|
