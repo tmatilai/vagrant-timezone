@@ -59,6 +59,11 @@ module VagrantPlugins
         hook.after Vagrant::Action::Builtin::Provision, Action::SetTimeZone
       end
 
+      guest_capability 'arch', 'change_timezone' do
+        require_relative 'cap/arch'
+        Cap::Arch
+      end
+
       guest_capability 'debian', 'change_timezone' do
         require_relative 'cap/debian'
         Cap::Debian

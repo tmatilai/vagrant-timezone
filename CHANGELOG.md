@@ -2,6 +2,7 @@
 
 Features:
 
+- Support Arch Linux
 - Support FreeBSD, NetBSD, and OpenBSD
 - Support OS X
 
