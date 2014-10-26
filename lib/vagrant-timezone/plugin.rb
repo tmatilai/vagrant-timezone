@@ -63,6 +63,11 @@ module VagrantPlugins
         require_relative 'cap/debian'
         Cap::Debian
       end
+
+      guest_capability 'redhat', 'change_timezone' do
+        require_relative 'cap/redhat'
+        Cap::RedHat
+      end
     end
   end
 end

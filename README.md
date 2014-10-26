@@ -35,4 +35,4 @@ This plugin requires Vagrant 1.2 or newer ([downloads](https://www.vagrantup.com
 
 The plugin is supposed to be compatible with all Vagrant providers and other plugins. Please file an [issue](https://github.com/tmatilai/vagrant-timezone/issues) if this is not the case.
 
-At the moment only Debian based VMs are supported.
+At the moment only Debian and RedHat based VMs are supported.
