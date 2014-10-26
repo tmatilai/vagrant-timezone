@@ -69,6 +69,11 @@ module VagrantPlugins
         Cap::Unix
       end
 
+      guest_capability 'darwin', 'change_timezone' do
+        require_relative 'cap/unix'
+        Cap::Unix
+      end
+
       guest_capability 'netbsd', 'change_timezone' do
         require_relative 'cap/unix'
         Cap::Unix

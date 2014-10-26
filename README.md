@@ -40,4 +40,5 @@ At the moment the supported platforms include:
 * FreeBSD
 * NetBSD
 * OpenBSD
+* OS X
 * RedHat based Linux distributions

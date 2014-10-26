@@ -3,6 +3,7 @@
 Features:
 
 - Support FreeBSD, NetBSD, and OpenBSD
+- Support OS X
 
 # 0.1.0 / 2014-10-26
 
