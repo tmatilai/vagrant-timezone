@@ -69,17 +69,17 @@ module VagrantPlugins
         Cap::CoreOS
       end
 
+      guest_capability 'darwin', 'change_timezone' do
+        require_relative 'cap/unix'
+        Cap::Unix
+      end
+
       guest_capability 'debian', 'change_timezone' do
         require_relative 'cap/debian'
         Cap::Debian
       end
 
       guest_capability 'freebsd', 'change_timezone' do
-        require_relative 'cap/unix'
-        Cap::Unix
-      end
-
-      guest_capability 'darwin', 'change_timezone' do
         require_relative 'cap/unix'
         Cap::Unix
       end
