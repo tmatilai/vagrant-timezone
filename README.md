@@ -40,6 +40,7 @@ At the moment the supported platforms include:
 * CoreOS
 * Debian based Linux distributions
 * FreeBSD
+* Gentoo
 * NetBSD
 * OpenBSD
 * OS X

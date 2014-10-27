@@ -84,6 +84,11 @@ module VagrantPlugins
         Cap::Unix
       end
 
+      guest_capability 'gentoo', 'change_timezone' do
+        require_relative 'cap/gentoo'
+        Cap::Gentoo
+      end
+
       guest_capability 'netbsd', 'change_timezone' do
         require_relative 'cap/unix'
         Cap::Unix
