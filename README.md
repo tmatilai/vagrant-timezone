@@ -37,6 +37,7 @@ The plugin is supposed to be compatible with all Vagrant providers and other plu
 
 At the moment the supported platforms include:
 * Arch Linux
+* CoreOS
 * Debian based Linux distributions
 * FreeBSD
 * NetBSD

@@ -64,6 +64,11 @@ module VagrantPlugins
         Cap::Arch
       end
 
+      guest_capability 'coreos', 'change_timezone' do
+        require_relative 'cap/coreos'
+        Cap::CoreOS
+      end
+
       guest_capability 'debian', 'change_timezone' do
         require_relative 'cap/debian'
         Cap::Debian
