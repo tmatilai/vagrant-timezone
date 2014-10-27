@@ -1,5 +1,5 @@
 module VagrantPlugins
   module TimeZone
-    VERSION = '0.2.0.dev'
+    VERSION = '1.0.0'
   end
 end

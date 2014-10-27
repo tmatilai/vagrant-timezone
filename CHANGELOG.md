@@ -1,4 +1,4 @@
-# 0.2.0 / _Not released yet_
+# 1.0.0 / 2014-10-27
 
 Features:
 
