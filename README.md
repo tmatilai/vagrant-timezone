@@ -29,6 +29,8 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+The value can be anything that the [tz database supports](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (the "TZ" column). For example "UTC" or "Europe/Helsinki".
+
 ## Compatibility
 
 This plugin requires Vagrant 1.2 or newer ([downloads](https://www.vagrantup.com/downloads)).
