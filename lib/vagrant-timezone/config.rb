@@ -1,4 +1,5 @@
 require 'vagrant'
+require 'time'
 
 module VagrantPlugins
   module TimeZone
@@ -6,12 +7,26 @@ module VagrantPlugins
     #
     # @!parse class Config < Vagrant::Plugin::V2::Config; end
     class Config < Vagrant.plugin('2', :config)
-      attr_accessor :value
+      attr_reader :value
 
       def initialize
         super
 
         @value = UNSET_VALUE
+      end
+
+      def value= value
+        if value == :host
+          # Get the offset of the current timezone of the host. Ruby doesn't reliably
+          # detect the named timezone, so we have to use the hour offset. Note that when
+          # DST changes, etc, this offset will change.
+
+          # We set timezone offset negative to match POSIX standards
+          # https://github.com/eggert/tz/blob/master/etcetera
+          @value = sprintf("Etc/GMT%+d", -((Time.zone_offset(Time.now.zone)/60)/60))
+        else
+          @value = value
+        end
       end
 
       def finalize!
