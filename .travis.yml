@@ -8,7 +8,7 @@ before_install:
 bundler_args: --without=development
 
 rvm: 2.0.0
-env: VAGRANT_VERSION=v1.6.5
+env: VAGRANT_VERSION=v1.7.4
 matrix:
   include:
     - env: VAGRANT_VERSION=v1.2.7
