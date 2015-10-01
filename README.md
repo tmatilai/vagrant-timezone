@@ -33,7 +33,7 @@ The value can be anything that the [tz database supports](http://en.wikipedia.or
 
 ### Matching the Host Timezone
 
-If the special symbol `:host` is passed at the parameter (`config.timezone.value = :host`), the plugin will attempt to set the guest timezone offset to match the current offset of the host. Because of limitations in Ruby's ability to get the named timezone from the host, it will instead convert the host's timezone offset to a calulated offset from UTC. So for example, on the west coast of the USA the calculated timezone might be `Etc/GMT+8`. After a change in the host's timezone (including a change due to Daylight Savings Time taking effect), the next time the Vagrantfile is run the guest clock will be updated to match. Note that this functionality has only been tested with an OS X host and Linux guest.
+If the special symbol `:host` is passed at the parameter (`config.timezone.value = :host`), the plugin will attempt to set the guest timezone offset to match the current offset of the host. Because of limitations in Ruby's ability to get the named timezone from the host, it will instead convert the host's timezone offset to a calculated offset from UTC. So for example, on the west coast of the USA the calculated timezone might be `Etc/GMT+8`. After a change in the host's timezone (including a change due to Daylight Savings Time taking effect), the next time the Vagrantfile is run the guest clock will be updated to match. Note that this functionality has only been tested with an OS X host and Linux guest.
 
 ## Compatibility
 
