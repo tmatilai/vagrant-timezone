@@ -1,5 +1,4 @@
 require 'vagrant'
-require 'time'
 
 module VagrantPlugins
   module TimeZone
@@ -23,7 +22,7 @@ module VagrantPlugins
 
           # We set timezone offset negative to match POSIX standards
           # https://github.com/eggert/tz/blob/master/etcetera
-          @value = sprintf("Etc/GMT%+d", -((Time.zone_offset(Time.now.zone)/60)/60))
+          @value = sprintf('Etc/GMT%+d', -(Time.now.utc_offset/3600))
         else
           @value = value
         end
