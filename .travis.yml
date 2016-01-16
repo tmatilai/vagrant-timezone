@@ -1,4 +1,6 @@
 language: ruby
+cache: bundler
+sudo: false
 
 before_install:
   - rvm @global do gem uninstall bundler --all --executables
@@ -8,7 +10,7 @@ before_install:
 bundler_args: --without=development
 
 rvm: 2.0.0
-env: VAGRANT_VERSION=v1.7.4
+env: VAGRANT_VERSION=v1.8.1
 matrix:
   include:
     - env: VAGRANT_VERSION=v1.2.7
