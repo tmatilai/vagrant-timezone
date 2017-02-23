@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Ruby > 2.2.x causes failure to install
-ruby "2.2.6"
+# ruby "2.2.6"
 
 gem 'vagrant',
   git: 'https://github.com/mitchellh/vagrant.git',
