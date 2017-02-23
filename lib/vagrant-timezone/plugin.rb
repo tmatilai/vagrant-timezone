@@ -103,6 +103,11 @@ module VagrantPlugins
         require_relative 'cap/redhat'
         Cap::RedHat
       end
+
+      guest_capability 'windows', 'change_timezone' do
+        require_relative 'cap/windows'
+        Cap::Windows
+      end
     end
   end
 end

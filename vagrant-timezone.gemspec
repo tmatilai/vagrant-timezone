@@ -6,8 +6,8 @@ require 'vagrant-timezone/version'
 Gem::Specification.new do |spec|
   spec.name          = 'vagrant-timezone'
   spec.version       = VagrantPlugins::TimeZone::VERSION
-  spec.authors       = ['Teemu Matilainen']
-  spec.email         = ['teemu.matilainen@iki.fi']
+  spec.authors       = ['Teemu Matilainen', 'Robert R. Meyer']
+  spec.email         = ['teemu.matilainen@iki.fi', 'Blue.Dog.Archolite@gmail.com']
   spec.description   = 'A Vagrant plugin that configures the time zone of a virtual machine'
   spec.summary       = spec.description
   spec.homepage      = 'http://github.com/tmatilai/vagrant-timezone'
