@@ -55,3 +55,7 @@ At the moment the supported platforms include:
     * NetBSD
     * OpenBSD
     * OS X
+
+## Development
+
+As Vagrant bundles Ruby, the same version should be used when developing this plugin. For example Vagrant 1.9 comes with Ruby 2.2.
