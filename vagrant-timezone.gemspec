@@ -13,10 +13,12 @@ Gem::Specification.new do |spec|
 
   spec.authors = [
     'Teemu Matilainen',
+    'Kyle Corbitt',
     'Robert R. Meyer'
   ]
   spec.email = [
     'teemu.matilainen@iki.fi',
+    'kyle@corbt.com',
     'Blue.Dog.Archolite@gmail.com'
   ]
 
