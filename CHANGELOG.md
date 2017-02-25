@@ -1,5 +1,10 @@
 # 1.1.1 / _Not released yet_
 
+Features:
+
+- Support Windows guests ([GH-4][])
+
+[GH-4]: https://github.com/tmatilai/vagrant-timezone/issues/4 "Issue 4"
 
 # 1.1.0 / 2015-10-01
 

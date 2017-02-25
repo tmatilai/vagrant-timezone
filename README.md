@@ -31,6 +31,8 @@ end
 
 The value can be anything that the [tz database supports](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (the "TZ" column). For example "UTC" or "Europe/Helsinki".
 
+For Windows guests the value can be a name in [this table](https://msdn.microsoft.com/en-us/library/ms912391(v=winembedded.11).aspx), or "Etc/GMT`<offset>`" (like with the `:host` value, see the next chapter).
+
 ### Matching the Host Timezone
 
 If the special symbol `:host` is passed at the parameter (`config.timezone.value = :host`), the plugin will attempt to set the guest timezone offset to match the current offset of the host. Because of limitations in Ruby's ability to get the named timezone from the host, it will instead convert the host's timezone offset to a calculated offset from UTC. So for example, on the west coast of the USA the calculated timezone might be `Etc/GMT+8`. After a change in the host's timezone (including a change due to Daylight Savings Time taking effect), the next time the Vagrantfile is run the guest clock will be updated to match. Note that this functionality has only been tested with an OS X host and Linux guest.
@@ -55,6 +57,8 @@ At the moment the supported platforms include:
     * NetBSD
     * OpenBSD
     * OS X
+
+- Windows
 
 ## Development
 
