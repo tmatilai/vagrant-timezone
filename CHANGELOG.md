@@ -12,7 +12,7 @@ Features:
 
 - Add option (`config.timezone.value = :host`) to synchronize the guest timezone with the host ([GH-2][])
 
-[GH-2]: https://github.com/tmatilai/vagrant-proxyconf/issues/2 "Issue 2"
+[GH-2]: https://github.com/tmatilai/vagrant-timezone/issues/2 "Issue 2"
 
 # 1.0.0 / 2014-10-27
 
