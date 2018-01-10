@@ -2,7 +2,7 @@ en:
   vagrant_timezone:
     not_enabled: "Time zone not configured"
     not_supported: "Setting time zone not supported"
-    configuring: "Setting time zone..."
+    configuring: "Setting time zone to '%{zone}'..."
 
     errors:
       vagrant_version: |-
