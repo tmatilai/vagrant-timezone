@@ -6,8 +6,12 @@ module VagrantPlugins
         # Set the time zone
         def self.change_timezone(machine, timezone)
           machine.communicate.tap do |comm|
-            comm.sudo("echo '#{timezone}' > /etc/timezone")
-            comm.sudo('dpkg-reconfigure --frontend noninteractive tzdata')
+            if comm.test('which timedatectl', sudo: true)
+              comm.sudo("timedatectl set-timezone '#{timezone}'")
+            else
+              comm.sudo("echo '#{timezone}' > /etc/timezone")
+              comm.sudo('dpkg-reconfigure --frontend noninteractive tzdata')
+            end
           end
         end
       end
