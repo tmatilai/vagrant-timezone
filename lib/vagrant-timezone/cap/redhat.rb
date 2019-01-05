@@ -10,7 +10,8 @@ module VagrantPlugins
           super
 
           machine.communicate.sudo(
-            "echo 'ZONE=\"#{timezone}\"' > /etc/sysconfig/clock")
+            "echo 'ZONE=\"#{timezone}\"' > /etc/sysconfig/clock"
+          )
         end
       end
     end

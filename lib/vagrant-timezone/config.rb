@@ -26,7 +26,7 @@ module VagrantPlugins
 
           # We set timezone offset negative to match POSIX standards
           # https://github.com/eggert/tz/blob/master/etcetera
-          @value = sprintf('Etc/GMT%+d', -(Time.now.utc_offset/3600))
+          @value = format('Etc/GMT%+d', -(Time.now.utc_offset / 3600))
         end
       end
     end

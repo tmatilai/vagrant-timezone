@@ -5,15 +5,16 @@ module VagrantPlugins
     module Action
       # Vagrant middleware action that sets the specified time zone
       class SetTimeZone
-        def initialize(app, env)
+        def initialize(app, _env)
           @app = app
         end
 
-        def call(env)
+        def call(env) # rubocop:disable Metrics/AbcSize
           @app.call(env)
 
           machine = env[:machine]
           timezone = machine.config.timezone.value
+
           if timezone.nil?
             logger.info I18n.t('vagrant_timezone.not_enabled')
           elsif machine.guest.capability?(:change_timezone)

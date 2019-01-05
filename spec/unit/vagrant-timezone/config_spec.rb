@@ -23,7 +23,7 @@ describe VagrantPlugins::TimeZone::Config do
     end
 
     it 'converts `:host` to the zone of the host' do
-      allow(Time).to receive(:now).and_return(Time.new(2016,7,10,2,12,0, '+03:00'))
+      allow(Time).to receive(:now).and_return(Time.new(2016, 7, 10, 2, 12, 0, '+03:00'))
       subject.value = :host
       subject.finalize!
       expect(subject.value).to eq('Etc/GMT-3')

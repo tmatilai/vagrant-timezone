@@ -8,7 +8,7 @@ module VagrantPlugins
     # @!parse class Plugin < Vagrant::Plugin::V2::Plugin; end
     class Plugin < Vagrant.plugin('2')
       # Compatible Vagrant versions
-      VAGRANT_VERSION_REQUIREMENT = '>= 1.2.0'
+      VAGRANT_VERSION_REQUIREMENT = '>= 1.2.0'.freeze
 
       # Returns true if the Vagrant version fulfills the requirements
       #
@@ -16,7 +16,8 @@ module VagrantPlugins
       # @return [Boolean]
       def self.check_vagrant_version(*requirements)
         Gem::Requirement.new(*requirements).satisfied_by?(
-          Gem::Version.new(Vagrant::VERSION))
+          Gem::Version.new(Vagrant::VERSION)
+        )
       end
 
       # Verifies that the Vagrant version fulfills the requirements
@@ -24,18 +25,19 @@ module VagrantPlugins
       # @raise [VagrantPlugins::TimeZone::VagrantVersionError] if this plugin
       # is incompatible with the Vagrant version
       def self.check_vagrant_version!
-        if !check_vagrant_version(VAGRANT_VERSION_REQUIREMENT)
-          msg = I18n.t(
-            'vagrant_timezone.errors.vagrant_version',
-            requirement: VAGRANT_VERSION_REQUIREMENT.inspect)
-          $stderr.puts msg
-          raise msg
-        end
+        return if check_vagrant_version(VAGRANT_VERSION_REQUIREMENT)
+
+        msg = I18n.t(
+          'vagrant_timezone.errors.vagrant_version',
+          requirement: VAGRANT_VERSION_REQUIREMENT.inspect
+        )
+        warn msg
+        raise msg
       end
 
       # Initializes the internationalization strings
       def self.setup_i18n
-        I18n.load_path << File.expand_path('../../../locales/en.yml', __FILE__)
+        I18n.load_path << File.expand_path('../../locales/en.yml', __dir__)
         I18n.reload!
       end
 

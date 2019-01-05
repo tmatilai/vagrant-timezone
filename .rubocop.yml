@@ -1,0 +1,37 @@
+AllCops:
+  TargetRubyVersion: 2.2
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Metrics/BlockLength:
+  Exclude:
+    - '*.gemspec'
+
+Metrics/ClassLength:
+  Severity: warning
+
+Metrics/LineLength:
+  Max: 100
+  Severity: warning
+
+Metrics/MethodLength:
+  Max: 13
+  Severity: warning
+
+Naming/FileName:
+  Exclude:
+    - 'lib/vagrant-timezone.rb'
+
+Style/GuardClause:
+  MinBodyLength: 3
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
