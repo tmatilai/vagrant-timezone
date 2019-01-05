@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+remove_default_specs() {
+    echo "Removing default gemspec"
+    find /home/travis/.rvm/rubies -wholename '*default/bundler-*.gemspec' -delete
+}
+
+install_bundler() {
+    echo "Uninstalling current Bundler versions"
+    rvm @global do gem uninstall bundler --all --executables
+    gem uninstall bundler --all --executables
+    echo "Installing Bundler '$BUNDLER_VERSION'"
+    gem install bundler --version "$BUNDLER_VERSION"
+}
+
+print_bundler_version() {
+    bundler --version
+}
+
+if [ -n "${BUNDLER_VERSION:-}" ]; then
+    remove_default_specs
+    install_bundler
+    print_bundler_version
+fi
