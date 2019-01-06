@@ -1,23 +1,17 @@
-require_relative 'unix'
+require_relative 'linux'
 
 module VagrantPlugins
   module TimeZone
     module Cap
       # RedHat capabilities for changing time zone
-      class RedHat < Unix
-        # Set the time zone
-        def self.change_timezone(machine, timezone)
-          machine.communicate.tap do |comm|
-            if comm.test('which timedatectl', sudo: true)
-              comm.sudo("timedatectl set-timezone '#{timezone}'")
-            else
-              super
+      class RedHat < Linux
+        # Set the time zone if `timedatectl` is not found
+        def self.change_timezone_generic(machine, timezone)
+          super
 
-              comm.sudo(
-                "echo 'ZONE=\"#{timezone}\"' > /etc/sysconfig/clock"
-              )
-            end
-          end
+          machine.communicate.sudo(
+            "echo 'ZONE=\"#{timezone}\"' > /etc/sysconfig/clock"
+          )
         end
       end
     end

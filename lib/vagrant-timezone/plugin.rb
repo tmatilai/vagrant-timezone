@@ -61,17 +61,7 @@ module VagrantPlugins
         hook.after Vagrant::Action::Builtin::Provision, Action::SetTimeZone
       end
 
-      guest_capability 'arch', 'change_timezone' do
-        require_relative 'cap/arch'
-        Cap::Arch
-      end
-
-      guest_capability 'coreos', 'change_timezone' do
-        require_relative 'cap/coreos'
-        Cap::CoreOS
-      end
-
-      guest_capability 'darwin', 'change_timezone' do
+      guest_capability 'bsd', 'change_timezone' do
         require_relative 'cap/unix'
         Cap::Unix
       end
@@ -81,24 +71,14 @@ module VagrantPlugins
         Cap::Debian
       end
 
-      guest_capability 'freebsd', 'change_timezone' do
-        require_relative 'cap/unix'
-        Cap::Unix
-      end
-
       guest_capability 'gentoo', 'change_timezone' do
         require_relative 'cap/gentoo'
         Cap::Gentoo
       end
 
-      guest_capability 'netbsd', 'change_timezone' do
-        require_relative 'cap/unix'
-        Cap::Unix
-      end
-
-      guest_capability 'openbsd', 'change_timezone' do
-        require_relative 'cap/unix'
-        Cap::Unix
+      guest_capability 'linux', 'change_timezone' do
+        require_relative 'cap/linux'
+        Cap::Linux
       end
 
       guest_capability 'redhat', 'change_timezone' do
