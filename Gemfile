@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'vagrant',
@@ -6,6 +8,10 @@ gem 'vagrant',
 
 gem 'rake'
 gem 'rspec', '~> 3.1'
+
+group :development do
+  gem 'guard-rspec', '~> 4.7'
+end
 
 group :plugins do
   gem 'vagrant-timezone', path: '.'
