@@ -1,12 +1,12 @@
-require_relative 'unix'
+require_relative 'linux'
 
 module VagrantPlugins
   module TimeZone
     module Cap
       # RedHat capabilities for changing time zone
-      class RedHat < Unix
-        # Set the time zone
-        def self.change_timezone(machine, timezone)
+      class RedHat < Linux
+        # Set the time zone if `timedatectl` is not found
+        def self.change_timezone_generic(machine, timezone)
           super
 
           machine.communicate.sudo(

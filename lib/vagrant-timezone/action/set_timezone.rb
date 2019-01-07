@@ -18,7 +18,7 @@ module VagrantPlugins
           if timezone.nil?
             logger.info I18n.t('vagrant_timezone.not_enabled')
           elsif machine.guest.capability?(:change_timezone)
-            env[:ui].info I18n.t('vagrant_timezone.configuring')
+            env[:ui].info I18n.t('vagrant_timezone.configuring', zone: timezone)
             machine.guest.capability(:change_timezone, timezone)
           else
             logger.info I18n.t('vagrant_timezone.not_supported')
