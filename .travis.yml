@@ -5,6 +5,10 @@ sudo: false
 before_install: ./travis/before_install
 bundler_args: --without=development
 
+script:
+  - bundle exec rake test
+  - bundle exec rake style
+
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true

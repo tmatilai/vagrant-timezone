@@ -8,9 +8,11 @@ gem 'vagrant',
 
 gem 'rake'
 gem 'rspec', '~> 3.1'
+gem 'rubocop', '~> 0.62'
 
 group :development do
   gem 'guard-rspec', '~> 4.7'
+  gem 'guard-rubocop', '~> 1.3'
 end
 
 group :plugins do
