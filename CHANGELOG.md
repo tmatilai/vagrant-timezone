@@ -1,5 +1,11 @@
 # 1.2.1 / _Not released yet_
 
+- Use `timedatectl` on all Linux distributions if found ([GH-10][], [GH-7][], [GH-5][])
+    * `systemd` is now used on many Linux distros (e.g. Debian based ones)
+
+[GH-5]: https://github.com/tmatilai/vagrant-timezone/issues/5 "Issue 5"
+[GH-7]: https://github.com/tmatilai/vagrant-timezone/issues/7 "Issue 7"
+[GH-10]: https://github.com/tmatilai/vagrant-timezone/issues/10 "Issue 10"
 
 # 1.2.0 / 2017-02-25
 
