@@ -1,5 +1,5 @@
 module VagrantPlugins
   module TimeZone
-    VERSION = '1.2.1.dev'.freeze
+    VERSION = '1.3.0'.freeze
   end
 end
