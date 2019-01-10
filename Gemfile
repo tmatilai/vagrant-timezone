@@ -10,6 +10,9 @@ gem 'rake'
 gem 'rspec', '~> 3.1'
 gem 'rubocop', '~> 0.62'
 
+gem 'vagrant-spec',
+    git: 'https://github.com/hashicorp/vagrant-spec.git'
+
 group :development do
   gem 'guard-rspec', '~> 4.7'
   gem 'guard-rubocop', '~> 1.3'

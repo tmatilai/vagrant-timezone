@@ -2,11 +2,10 @@ language: ruby
 cache: bundler
 sudo: false
 
-before_install: ./travis/before_install
 bundler_args: --without=development
 
 script:
-  - bundle exec rake test
+  - bundle exec rake test:unit
   - bundle exec rake style
 
 env:
@@ -19,8 +18,7 @@ matrix:
     - env: VAGRANT_VERSION=v2.2.2
     - env: VAGRANT_VERSION=v2.0.4
     - env:
-        - VAGRANT_VERSION=v1.8.7
-        - BUNDLER_VERSION=1.12.5
+        - VAGRANT_VERSION=v1.9.8
       rvm: 2.2.5
     - env: VAGRANT_VERSION=master
   allow_failures:

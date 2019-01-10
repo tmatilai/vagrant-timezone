@@ -17,6 +17,7 @@ group :ruby, halt_on_fail: true do
     watch(/\.gemspec$/)
     watch('Gemfile')
     watch('Rakefile')
+    watch(%r{/Vagrantfile$})
     watch('.rubocop.yml') { '.' }
   end
 end

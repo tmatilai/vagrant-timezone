@@ -10,6 +10,8 @@ Layout/AlignHash:
 Metrics/BlockLength:
   Exclude:
     - '*.gemspec'
+    - '**/*.rake'
+    - '**/*_spec.rb'
 
 Metrics/ClassLength:
   Severity: warning
@@ -25,6 +27,7 @@ Metrics/MethodLength:
 Naming/FileName:
   Exclude:
     - 'lib/vagrant-timezone.rb'
+    - '**/vagrant-spec.config.rb'
 
 Style/GuardClause:
   MinBodyLength: 3

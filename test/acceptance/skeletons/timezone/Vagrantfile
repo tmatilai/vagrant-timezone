@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+timezone = ENV['VAGRANT_SPEC_TIMEZONE']
+timezone = :host if timezone == ':host'
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'box'
+
+  config.timezone.value = timezone if timezone
+end

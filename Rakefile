@@ -7,13 +7,15 @@ require 'rubocop/rake_task'
 task default: ['test:unit', 'style']
 
 desc 'Run all tests'
-task test: ['test:unit']
+task test: ['test:unit', 'test:acceptance']
 
 namespace :test do
   desc 'Run unit tests'
   RSpec::Core::RakeTask.new(:unit) do |task|
     task.pattern = 'test/unit/**/*_spec.rb'
   end
+
+  load 'tasks/acceptance.rake'
 end
 
 desc 'Run all style checks'
