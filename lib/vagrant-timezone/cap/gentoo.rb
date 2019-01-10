@@ -8,6 +8,8 @@ module VagrantPlugins
         # Set the time zone if `timedatectl` is not found
         def self.change_timezone_generic(machine, timezone)
           machine.communicate.tap do |comm|
+            super
+
             comm.sudo("echo '#{timezone}' > /etc/timezone")
             comm.sudo('emerge --config timezone-data')
           end
