@@ -1,0 +1,8 @@
+virtualbox:
+  - ubuntu/bionic64
+  - debian/wheezy64
+  - centos/7
+  - archlinux/archlinux
+  - generic/gentoo
+  - generic/freebsd12
+  - generic/openbsd6
